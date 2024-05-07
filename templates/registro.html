@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
 </head>
+
 <body>
-    <h6>registro</h6>
-    <h1>{{nombre}}</h1>
+    <nav class="fixed flex w-full h-20">
+        <div class="flex justify-center items-center bg-pink-200 basis-1/2">
+            <h1 class="font-bold text-start sm:text-[10px] xl:text-[40px] ms-5"></h1>
+        </div>
+        <div class="flex justify-evenly items-center bg-pink-200 basis-1/2">
+        </div>
+    </nav>
+    <div class="h-20"></div>
+    <div>
+        <h1>Formulario de registro</h1>
+    </div>
+    <div class="flex justify-center items-center">
+        
+        <form class="flex flex-col justify-center mt-30 p-10 border rounded-xl w-auto h-auto" action="" , method="post">
+            <h1 class="font-bold text-[25px] text-center uppercase">Ingresa tus datos</h1>
+            <label for="">Nombre:</label>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="" id="" placeholder="Ingresa tu nombre(s)">
+            <label class="mt-5" for="">Apellidos:</label>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="" id="" placeholder="Ingresa tus apellidos">
+            <label class="mt-5" for="">Telefono:</label>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="t" name="" id="" placeholder="5555555555" maxlength="10">
+            <label class="mt-5" for="">Correo:</label>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="" id="" placeholder="ejemplo@gmail.com">
+            <label class="mt-5" for="">Usuario:</label>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="" id="" placeholder="ingresa un usuario sin espacios">
+            <label class="mt-5" for="">Contraseña::</label>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="password" name="" id="" placeholder="**********">
+            <input class="bg-pink-600 mt-8 px-4 py-2 rounded-xl hover:font-bold text-white" type="submit" value="Registrar">
+        </form>
+    </div>
 </body>
+
 </html>
