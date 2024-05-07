@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+
+<body>
+    <nav class="fixed flex flex-row justify-center items-center bg-purple-300 p-5 w-full h-20">
+        <h1 class="text-[30px] basis-1/2"></h1>
+        <div class="basis-1/4"></div>
+        <div class="justify-around basis-1/4">
+
+        </div>
+    </nav>
+    <div class="h-20"></div>
+    <div class="grid grid-cols-2 mt-10 mr-4">
+        <div class="border rounded-xl">
+            
+        </div>
+        <div class="flex bg-blue-400 rounded-xl h-auto <a class= justify>"bg-white px-3 py-2 rounded-xl" href="{{ url_for('regis.login' ) }}">Iniciar sesion</a>
+            <a class="bg-white px-3 py-2 rounded-xl ms-5" href="{{ url_for('regis.registro' ) }}">Resgistrarse</a>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
