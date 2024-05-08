@@ -9,7 +9,7 @@ import mysql.connector
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 app.secret_key='jsalkjdlksdhkhsadsdxczxc3156s4dasd46sad'
 app.register_blueprint(index, url_prefix='/')
-app.register_blueprint(regis, url_prefix='/user')
+app.register_blueprint(regis, url_prefix='/regis')
 app.register_blueprint(admin, url_prefix='/admin')
 
 if __name__ == '__main__':

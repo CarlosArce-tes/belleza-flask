@@ -46,7 +46,7 @@ def registro():
             executor.execute('insert into usuarios (nombre, apellido, telefono, email, usuario, password)values (%s, %s, %s, %s, %s, %s)', (nombre, apellido, telefono, email, usuario, password))
             conn.commit()
             accedio = 'Registro exitoso'
-            return render_template('registro.html', accedio=accedio)
+            return redirect(url_for('index.inicio'))
         except Exception as e:
             error = 'Error al realizar el registro'
             return  render_template('registro.html', error=error)
