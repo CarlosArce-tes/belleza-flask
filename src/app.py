@@ -1,6 +1,9 @@
 #Importacion de librerias y direcciones
 import sys
 sys.path.append('../')
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from flask import Flask, render_template
 
 # Configuracion de MySQL
