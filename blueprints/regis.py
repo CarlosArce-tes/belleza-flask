@@ -16,6 +16,7 @@ def login():
         executor.execute('select * from usuarios where usuario = %s and password = %s', (usuario, password))
         datosUser = executor.fetchone()
         if datosUser:
+            
             session['nombres'] = datosUser[1]
             session['apellidos'] = datosUser[2]
             session['telefono'] = datosUser[3]
@@ -23,7 +24,11 @@ def login():
             session['fecharegistro'] = datosUser[5]
             session['usuario'] = datosUser[6]
             session['password'] = datosUser[7]
+            flash('¡Usuario registrado exitosamente!', 'success')
             return redirect(url_for('admin.panel'))
+        else:
+            error = 'Usuario o contraseña incorrectos'
+            return render_template('login.html', error = error)
     return render_template('login.html')
 
 @regis.route('logout')

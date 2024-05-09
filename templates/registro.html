@@ -23,26 +23,40 @@
     </div>
     <a href="{{ url_for('index.inicio' ) }}" class="text-xl hover:text-pink-500 underline ms-10">Volver a inicio</a>
     <div class="flex justify-center items-center mt-8">
-        <form class="flex flex-col justify-center shadow-2xl shadow-slate-400 mt-30 p-10 border rounded-xl w-auto h-auto" action="" , method="post">
-            {% if accedio %}
-                <h1 class="border-green-400 bg-green-200 py-3 border rounded-xl font-bold text-center">{{accedio}}</h1>
-            {% elif error %}
-                <h1 class="bg-red-300 py-3 border border-red-800 rounded-xl font-bold text-center">{{error}}</h1>
+        <form
+            class="flex flex-col justify-center shadow-2xl shadow-slate-400 mt-30 p-10 border rounded-xl w-auto h-auto"
+            action="" , method="post">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
             {% endif %}
+            {% endwith %}
+
             <h1 class="font-bold text-[25px] text-center uppercase">Ingresa tus datos</h1>
             <label for="">Nombre:</label>
-            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="nombre" id="" placeholder="Ingresa tu nombre(s)" required>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="nombre"
+                id="" placeholder="Ingresa tu nombre(s)" required>
             <label class="mt-5" for="">Apellidos:</label>
-            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="apellido" id="" placeholder="Ingresa tus apellidos" required>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text"
+                name="apellido" id="" placeholder="Ingresa tus apellidos" required>
             <label class="mt-5" for="">Telefono:</label>
-            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="telefono" id="" placeholder="5555555555" maxlength="10" required>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text"
+                name="telefono" id="" placeholder="5555555555" maxlength="10" required>
             <label class="mt-5" for="">Correo:</label>
-            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="email" id="" placeholder="ejemplo@gmail.com" required>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="email"
+                id="" placeholder="ejemplo@gmail.com" required>
             <label class="mt-5" for="">Usuario:</label>
-            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="usuario" id="" placeholder="ingresa un usuario sin espacios" required>
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="usuario"
+                id="" placeholder="ingresa un usuario sin espacios" required>
             <label class="mt-5" for="">Contraseña::</label>
-            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="password" name="password" id="" placeholder="**********" required>
-            <input class="bg-pink-600 mt-8 px-4 py-2 rounded-xl hover:rounded-full hover:font-bold text-white" type="submit" value="Registrar">
+            <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="password"
+                name="password" id="" placeholder="**********" required>
+            <input class="bg-pink-600 mt-8 px-4 py-2 rounded-xl hover:rounded-full hover:font-bold text-white"
+                type="submit" value="Registrar">
         </form>
     </div>
 </body>
