@@ -1,0 +1,18 @@
+
+git config --global user.name "Tu Nombre"
+
+git config --global user.email "tu@email.com"
+
+
+Para actualizar : git pull
+
+Estado de repositorio local: git status
+
+Agregar cambios: git add ruta/nombredel archivo
+
+Confirmar cambios : git commit -m "acciones realizadas"
+
+subir los cambios al repositorio remoto: git push -u origin main
+
+
+
