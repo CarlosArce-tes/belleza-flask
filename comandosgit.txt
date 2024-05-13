@@ -14,5 +14,6 @@ Confirmar cambios : git commit -m "acciones realizadas"
 
 subir los cambios al repositorio remoto: git push -u origin main
 
+mustra versiones anteriores : git log
 
 
