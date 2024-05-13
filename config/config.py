@@ -4,3 +4,4 @@ MYSQL_CONFIG = {
     'password': 'carlos18',
     'database': 'belleza'
 }
+
