@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, session, url_for, flash
+from flask import Blueprint, render_template, request, redirect, session, url_for, flash, make_response
 import mysql.connector
 from config.config import MYSQL_CONFIG
 
@@ -33,8 +33,8 @@ def login():
 
 @regis.route('logout')
 def logout():
-    session.clear()
-    return redirect(url_for('index.inicio'))
+    session.clear() 
+     
 
 @regis.route('/registro', methods=['GET', 'POST'])
 def registro():
