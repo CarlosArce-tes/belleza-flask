@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+
+<body>
+    <nav class="fixed flex w-full h-20">
+        <div class="flex justify-center items-center bg-pink-200 basis-1/4">
+            <h1 class="font-bold text-start ms-5">Glamour and Look</h1>
+        </div>
+        <div class="flex justify-evenly items-center bg-pink-200 basis-3/4">
+            <h1>{{usuario}}</h1>
+            <h1 class="text-wrap">{{nombre}} {{apellido}}</h1>
+            <a class="bg-pink-600 py-2 border rounded-xl w-32 text-center text-white" href="{{ url_for('regis.logout' ) }}">Cerrar sesion</a>
+        </div>
+    </nav>
+    <div class="h-32"></div>
+    <a class="ml-5 text-xl hover:text-pink-400 underline" href="{{ url_for('admin.panel' ) }}">Ir a inicio</a>
+    <div class="flex justify-center items-center">
+
+
+        <table class="border table-auto">
+            <tr class="bg-slate-400">
+                <th class="ml-3">ID</th>
+                <th class="ml-3">Nombre</th>
+                <th class="ml-3">Apellidos</th>
+                <th class="ml-3">Telefono</th>
+                <th class="ml-3">E-mail</th>
+                <th class="ml-3">Fecha de registro</th>
+                <th class="ml-3">Usuario</th>
+            </tr>
+            {% for user in users %}
+            <tr class="border">
+                <td class="px-5 py-2 border font-extrabold">{{user[0]}}</td>
+                <td class="px-5">{{user[1]}}</td>
+                <td class="px-5">{{user[2]}}</td>
+                <td class="px-5">{{user[3]}}</td>
+                <td class="px-5">{{user[4]}}</td>
+                <td class="px-5">{{user[5]}}</td>
+                <td class="px-5">{{user[6]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -18,8 +18,19 @@ def panel():
 
 @admin.route('/usuarios')
 def usuarios():
-    conn = mysql.connector.connect(**MYSQL_CONFIG)
-    executor = conn.cursor()
-    executor.execute('select * from usuarios')
-    users = executor.fetchall()
-    print(users)
+    if 'user' and 'password' in session:
+        nombre = session['nombres']
+        apellido = session['apellidos']
+        telefono = session['telefono']
+        email = session['telefono']
+        fecharegistro = session['fecharegistro']
+        usuario = session['usuario']
+        password = session['password']
+
+        conn = mysql.connector.connect(**MYSQL_CONFIG)
+        executor = conn.cursor()
+        executor.execute('select * from usuarios')
+        users = executor.fetchall()
+        print(users)
+
+        return render_template('verusers.html', users=users, nombre=nombre, apellido=apellido, usuario=usuario)

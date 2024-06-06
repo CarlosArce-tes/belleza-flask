@@ -7,14 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
 <body>
-    <a href="{{ url_for('index.inicio' ) }}">Volver a inicio</a>
-    <div>
-        <form action="{{ url_for('regis.login' ) }}" method="post">
-            <label for="">Usuario</label>
-            <input type="text" name="usuario">
-            <label for="">Contraseña</label>
-            <input type="password" name="password">
-            <input type="submit" value="Iniciar sesion">
+    <nav class="bg-pink-400 h-32">
+
+    </nav>
+    <div class="mt-5"></div>
+    <a class="ml-5 text-xl underline" href="{{ url_for('index.inicio' ) }}">Volver a inicio</a>
+    <div class="flex flex-col justify-center items-center">
+        <form class="flex flex-col p-10 border rounded-xl w-auto h-auto" action="{{ url_for('regis.login' ) }}" method="post">
+            <h1 class="mt-5 mb-10 font-bold text-center">INICIAR SESION</h1>
+            <label for="">Usuario:</label>
+            <input class="px-3 border w-96 h-10" type="text" name="usuario" placeholder="Ingresa tu usuario" required>
+            <label class="mt-5" for="">Contraseña:</label>
+            <input class="px-3 border w-96 h-10" type="password" name="password" placeholder="Ingresa tu contraseña" required>
+            <div class="flex justify-center items-center mt-5">
+                <input class="bg-blue-500 py-2 rounded-xl w-36 text-white" type="submit" value="Iniciar sesion">
+            </div>
+            
         </form>
     </div>
 </body>

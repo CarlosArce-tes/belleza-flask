@@ -33,7 +33,8 @@ def login():
 
 @regis.route('logout')
 def logout():
-    session.clear() 
+    session.clear()
+    return redirect(url_for('index.inicio')) 
      
 
 @regis.route('/registro', methods=['GET', 'POST'])
