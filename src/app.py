@@ -19,6 +19,7 @@ from config.config import MYSQL_CONFIG
 from blueprints.index import index
 from blueprints.regis import regis
 from blueprints.admin import admin
+from blueprints.citas import citas
 
 # Importar conector de MySQL
 import mysql.connector
@@ -45,6 +46,8 @@ app.register_blueprint(index, url_prefix='/')
 app.register_blueprint(regis, url_prefix='/regis')
 #Blueprint encargado de las tareas correspondientes o dirigen al perfil del administrador
 app.register_blueprint(admin, url_prefix='/admin')
+
+app.register_blueprint(citas, url_prefix='/citas')
 
 # Inicializacion del servidor de Flask
 if __name__ == '__main__':
