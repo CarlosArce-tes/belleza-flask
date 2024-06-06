@@ -26,18 +26,14 @@
         <form
             class="flex flex-col justify-center shadow-2xl shadow-slate-400 mt-30 p-10 border rounded-xl w-auto h-auto"
             action="" , method="post">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
+           
+            {% if error %}
+                <h1 class="text-red-500">Error al relaizar el registro</h1>
+            {% elif not error %}
+                <h1 class="text-green-400">Registro exitoso</h1>
             {% endif %}
-            {% endwith %}
-
             <h1 class="font-bold text-[25px] text-center uppercase">Ingresa tus datos</h1>
-            <label for="">Nombre:</label>
+            <label  class="mt-5">Nombre:</label>
             <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="text" name="nombre"
                 id="" placeholder="Ingresa tu nombre(s)" required>
             <label class="mt-5" for="">Apellidos:</label>
