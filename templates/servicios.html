@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
 <body>
-
+    <table class="border">
+        <tr class="bg-slate-400">
+            <th class="ml-3 uppercase">ID</th>
+            <th class="ml-3 uppercase">Nombre de Servicio</th>
+            <th class="ml-3 uppercase">Descripcion</th>
+            <th class="ml-3 uppercase">Precio MXN</th>
+        </tr>
+        {% for servicio in datos_servicios %}
+        <tr class="border">
+            <td class="px-5 py-2 border font-extrabold">{{servicio[0]}}</td>
+            <td class="px-5">{{servicio[1]}}</td>
+            <td class="px-5">{{servicio[2]}}</td>
+            <td class="px-5 font-extrabold text-blue-800">$ {{servicio[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>         
 
 </html>

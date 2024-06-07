@@ -1,10 +1,11 @@
-from flask import Flask, Blueprint, render_template, session
-citas = Blueprint('citas', __name__)
-from config.config import MYSQL_CONFIG
+from flask import Flask, render_template, redirect, Blueprint, session
 import mysql.connector
 
-@citas.route('/vercitas')
-def vercitas():
+servicios = Blueprint('servicios', __name__)
+from config.config import MYSQL_CONFIG
+
+@servicios.route('/verservicios')
+def verservicios():
     if 'user' and 'password' in session:
         nombre = session['nombres']
         apellido = session['apellidos']
@@ -16,9 +17,7 @@ def vercitas():
 
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         executor  = conn.cursor()
-        executor.execute('select * from citas')
-        datos_citas = executor.fetchall()
-        
-
-        
-    return render_template('citas.html', nombre = nombre, apellido=apellido, datos_citas = datos_citas)
+        executor.execute('select * from servicios')
+        datos_servicios = executor.fetchall()
+    
+    return render_template('servicios.html', datos_servicios = datos_servicios)
