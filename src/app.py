@@ -20,6 +20,7 @@ from blueprints.index import index
 from blueprints.regis import regis
 from blueprints.admin import admin
 from blueprints.citas import citas
+from blueprints.servicios import servicios
 
 # Importar conector de MySQL
 import mysql.connector
@@ -48,6 +49,8 @@ app.register_blueprint(regis, url_prefix='/regis')
 app.register_blueprint(admin, url_prefix='/admin')
 
 app.register_blueprint(citas, url_prefix='/citas')
+
+app.register_blueprint(servicios, url_prefix='/servicios')
 
 # Inicializacion del servidor de Flask
 if __name__ == '__main__':
