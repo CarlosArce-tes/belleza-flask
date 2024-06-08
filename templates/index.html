@@ -11,19 +11,17 @@
 <body>
     <nav class="fixed flex w-full h-20">
         <div class="flex justify-center items-center bg-pink-200 basis-1/2">
-            <h1 class="font-bold text-start sm:text-[10px] xl:text-[40px] ms-5 uppercase">La belleza es para tod@s</h1>
+            <h1 class="font-bold text-start sm:text-[10px] xl:text-[40px] uppercase ms-5">La belleza es para tod@s</h1>
         </div>
-        <div class="flex justify-evenly items-center bg-pink-200 basis-1/2">
-            <a href="" class="">Servicios</a>
-            <a href="" class="">Acerca de Nosotros</a>
+        <div class="flex justify-end items-center bg-pink-200 basis-1/2">
+            <a href="{{ url_for('regis.login' ) }}" class="bg-blue-400 mr-10 px-3 py-2 rounded-xl">Iniciar Sesion</a>
+            <a href="{{ url_for('regis.registro' ) }}" class="mr-10">Registrate</a>
         </div>
     </nav>
     <div class="h-20"></div>
-    <div class="flex justify-center items-center mt-40">
-        <a href="{{ url_for('regis.login' ) }}" class="bg-blue-400 mr-10 px-3 py-2 rounded-xl">Iniciar Sesion</a>
-        <a href="{{ url_for('regis.registro' ) }}" class="">Registrate</a>
-    </div>
+    <div>
 
+    </div>
 </body>         
 
 </html>
