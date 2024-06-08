@@ -21,16 +21,22 @@
     <div>
         <h1 class="mt-8 text-[40px] text-center">Formulario de registro</h1>
     </div>
-    <a href="{{ url_for('index.inicio' ) }}" class="text-xl hover:text-pink-500 underline ms-10">Volver a inicio</a>
+    <div class="ml-5">
+        <a class="text-xl underline" href="{{ url_for('index.inicio' ) }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bg-pink-500 hover:bg-violet-500 p-2 rounded-full hover:text-white size-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+        </a>
+    </div>
     <div class="flex justify-center items-center mt-8">
         <form
             class="flex flex-col justify-center shadow-2xl shadow-slate-400 mt-30 p-10 border rounded-xl w-auto h-auto"
             action="" , method="post">
            
             {% if error %}
-                <h1 class="text-red-500">Error al relaizar el registro</h1>
-            {% elif not error %}
-                <h1 class="text-green-400">Registro exitoso</h1>
+                <h1 class="bg-red-300 rounded-xl h-10 text-center text-red-800">Error al relaizar el registro</h1>
+            {% elif accedio %}
+                <h1 class="bg-green-300 rounded-xl h-10 text-center text-green-800">Registro exitoso</h1>
             {% endif %}
             <h1 class="font-bold text-[25px] text-center uppercase">Ingresa tus datos</h1>
             <label  class="mt-5">Nombre:</label>
