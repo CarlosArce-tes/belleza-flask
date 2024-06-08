@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
-<body  style="background-image: url('../static/portada.jpg');" class="bg-cover bg-no-repeat bg-center h-screen">
+<body  style="background-image: url('../static/portada.jpg');" class="bg-inherit bg-no-repeat bg-center bg-scroll h-screen">
     <nav class="bg-pink-300 w-screen h-32">
 
     </nav>
@@ -20,7 +20,7 @@
     </div>
         
     <div class="flex flex-col justify-center items-center">
-        <form class="flex flex-col bg-white/40 backdrop-blur-2xl mt-10 p-10 border rounded-xl w-auto h-auto" action="{{ url_for('regis.login' ) }}" method="post">
+        <form class="flex flex-col bg-white/30 backdrop-blur-2xl mt-10 p-10 border rounded-xl w-auto h-auto" action="{{ url_for('regis.login' ) }}" method="post">
             <h1 class="mt-5 mb-10 font-bold text-3xl text-center">INICIAR SESION</h1>
             <label for="">Usuario:</label>
             <input class="bg-white/40 backdrop-blur-xl mt-2 px-3 border selection:outline rounded-xl w-96 h-10 outline-pink-400" type="text" name="usuario" placeholder="Ingresa tu usuario" required>
