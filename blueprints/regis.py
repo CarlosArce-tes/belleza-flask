@@ -27,7 +27,7 @@ def login():
             flash('¡Usuario registrado exitosamente!', 'success')
             return redirect(url_for('admin.panel'))
         else:
-            error = 'Usuario o contraseña incorrectos'
+            error = 'Credenciales incorrectas o usuario no registrado'
             return render_template('login.html', error = error)
     return render_template('login.html')
 

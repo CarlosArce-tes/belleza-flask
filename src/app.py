@@ -10,7 +10,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 #Importacion de Flask y complementos
-from flask import Flask, render_template
+from flask import Flask
 
 # Configuracion de MySQL
 from config.config import MYSQL_CONFIG
@@ -55,4 +55,3 @@ app.register_blueprint(servicios, url_prefix='/servicios')
 # Inicializacion del servidor de Flask
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
- 

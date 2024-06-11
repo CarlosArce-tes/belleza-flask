@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
 </head>
@@ -23,7 +23,7 @@
     </div>
     <div class="ml-5">
         <a class="text-xl underline" href="{{ url_for('index.inicio' ) }}">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bg-pink-500 hover:bg-violet-500 p-2 rounded-full hover:text-white size-12">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bg-pink-500 hover:bg-violet-500 p-2 rounded-xl hover:rounded-full hover:text-white size-12 hover:size-14 transition-all duration-1000 ease-in-out">
             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
         </a>
@@ -57,7 +57,7 @@
             <label class="mt-5" for="">Contraseña::</label>
             <input class="border-2 border-purple-400 p-3 rounded-xl w-96 h-10 text-slate-500" type="password"
                 name="password" id="" placeholder="**********" required>
-            <input class="bg-pink-600 mt-8 px-4 py-2 rounded-xl hover:rounded-full hover:font-bold text-white"
+            <input class="bg-pink-600 mt-8 px-4 hover:px-5 py-2 hover:py-3 rounded-xl hover:rounded-full hover:font-bold text-white transition-all duration-500"
                 type="submit" value="Registrar">
         </form>
     </div>

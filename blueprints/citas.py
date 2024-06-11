@@ -13,12 +13,8 @@ def vercitas():
         fecharegistro = session['fecharegistro']
         usuario = session['usuario']
         password = session['password']
-
         conn = mysql.connector.connect(**MYSQL_CONFIG)
         executor  = conn.cursor()
         executor.execute('select * from citas')
         datos_citas = executor.fetchall()
-        
-
-        
     return render_template('citas.html', nombre = nombre, apellido=apellido, datos_citas = datos_citas)

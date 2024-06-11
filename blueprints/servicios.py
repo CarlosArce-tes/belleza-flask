@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, Blueprint, session
+from flask import Flask, render_template, redirect, Blueprint, session,jsonify
 import mysql.connector
 
 servicios = Blueprint('servicios', __name__)
@@ -19,5 +19,4 @@ def verservicios():
         executor  = conn.cursor()
         executor.execute('select * from servicios')
         datos_servicios = executor.fetchall()
-    
     return render_template('servicios.html', datos_servicios = datos_servicios)
