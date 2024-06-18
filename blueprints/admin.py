@@ -7,13 +7,15 @@ Panel de incio de las tareas que puede realizar usando un menu que redirecciona 
 Vista de usuarios: El administrador puede agregar, eliminar, editar y ver los usuarios existentes en la plataforma
 '''
 
-from flask import Blueprint, render_template, session, redirect, url_for
+from flask import Blueprint, jsonify, render_template, session, redirect, url_for, request, Response, Request
 admin = Blueprint('admin', __name__)
 from config.config import MYSQL_CONFIG
 import mysql.connector
 
-@admin.route('/panel')
+@admin.route('/panel', )
 def panel():
+    url = Response('http://127.0.0.1:8000/regis/login')
+    print(url)
     if 'user' and 'password' in session:
         nombre = session['nombres']
         apellido = session['apellidos']
@@ -22,10 +24,11 @@ def panel():
         fecharegistro = session['fecharegistro']
         usuario = session['usuario']
         password = session['password']
-    else:
+        return jsonify(nombre, apellido, telefono, email, fecharegistro, usuario, password)
+'''    else:
         return redirect(url_for('index.inicio')), 
     return render_template('inicioadmin.html', usuario=usuario, nombre=nombre, apellido=apellido, telefono=telefono, email=email, fecharegistro=fecharegistro)
-
+'''
 @admin.route('/usuarios')
 def usuarios():
     if 'user' and 'password' in session:
@@ -41,9 +44,10 @@ def usuarios():
         executor = conn.cursor()
         executor.execute('select * from usuarios')
         users = executor.fetchall()
+        return jsonify(users)
         #print(users)    //Impresion de usuairos para checar la conexion a la base de datos y ver que la peticion de datos sea exitosa, descomentar en caso de error de obtencion de usuarios, checar si la conexion es exitosa
-    else: 
+'''    else: 
         
         return redirect(url_for('index.inicio'))
 
-    return render_template('verusers.html', users=users, nombre=nombre, apellido=apellido, usuario=usuario)
+    return render_template('verusers.html', users=users, nombre=nombre, apellido=apellido, usuario=usuario)'''

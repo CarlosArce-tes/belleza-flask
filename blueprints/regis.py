@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, session, url_for, flash, make_response
+from flask import Blueprint, jsonify, render_template, request, redirect, session, url_for, flash, make_response, Response, Request
 import mysql.connector
 from config.config import MYSQL_CONFIG
 
@@ -8,6 +8,7 @@ regis = Blueprint('regis', __name__)
 
 @regis.route('/login',  methods=['GET', 'POST'])
 def login():
+
     if request.method == 'POST':
         usuario = request.form['usuario']
         password = request.form['password']
@@ -24,12 +25,16 @@ def login():
             session['fecharegistro'] = datosUser[5]
             session['usuario'] = datosUser[6]
             session['password'] = datosUser[7]
-            flash('¡Usuario registrado exitosamente!', 'success')
-            return redirect(url_for('admin.panel'))
+            return jsonify(datosUser)
+
+
+
+
+'''            return redirect(url_for('admin.panel'))
         else:
             error = 'Credenciales incorrectas o usuario no registrado'
             return render_template('login.html', error = error)
-    return render_template('login.html')
+    return render_template('login.html')'''
 
 @regis.route('logout')
 def logout():
